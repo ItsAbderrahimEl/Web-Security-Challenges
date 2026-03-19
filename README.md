@@ -11,9 +11,10 @@ Each challenge lives in its own self-contained directory:
 ```
 Web-Security-Challenges/
 ├── challenge-name/
-│   ├── challenge/        # Challenge source code (vulnerable application)
-│   ├── writeup.md        # Detailed writeup — vulnerability, methodology, exploitation
-│   └── resolver/         # Automated exploit / solver script
+│   ├── challenge/        			# Challenge source code (vulnerable application)
+│   ├── writeup.md        			# Detailed writeup — vulnerability, methodology, exploitation
+│   ├── resolver/         			# Automated exploit / solver script
+│   └── challenge/deploy.sh         # Shell script to deploy the challenge locally
 ```
 
 ---
@@ -25,6 +26,7 @@ Web-Security-Challenges/
 | `challenge/` | The vulnerable application code to attack |
 | `writeup.md` | Step-by-step breakdown of the vulnerability and exploitation approach |
 | `resolver/` | A working exploit or solver script that captures the flag |
+| `deploy.sh` | A shell script to deploy the challenge application locally |
 
 ---
 
@@ -52,7 +54,15 @@ git clone git@github.com:ItsAbderrahimEl/Web-Security-Challenges.git
 cd Web-Security-Challenges
 ```
 
-Navigate to any challenge directory, read the `writeup.md` to understand the vulnerability, deploy the challenge code, and run the resolver to see the exploitation in action.
+Navigate to any challenge directory and run the deploy script to spin up the vulnerable application:
+
+```bash
+cd challenge-name
+chmod +x deploy.sh
+./deploy.sh
+```
+
+Then read `writeup.md` to understand the vulnerability and run the resolver to see the exploitation in action.
 
 ---
 
